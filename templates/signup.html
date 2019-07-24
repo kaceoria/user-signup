@@ -1,11 +1,10 @@
-<!Doctype html>
+{% extends "base.html" %}
 
-<html>
-    <head>
-    </head>
-    <body>
+{% block content %}
+
+
         <h1>Signup</h1>
-        <form method='POST'>
+        <form method='POST' action="/signup">
             <table>
                 <tbody>
                     <tr>
@@ -14,6 +13,7 @@
                         </td>
                         <td>
                             <input name="username" type="text" value="">
+                            <span class="error">{{username_error}}</span>
                         </td>
                     </tr>
                     <tr>
@@ -22,6 +22,7 @@
                         </td>
                         <td>
                             <input name="password" type="password">
+                            <span class= "error">{{password_error}}</span>
                         </td>
                     </tr>
                     <tr>
@@ -30,6 +31,7 @@
                         </td>
                         <td>
                             <input name="verify" type="password">
+                            <span class="error">{{verify_error}}</span>
                         </td>
                     </tr>
                     <tr>
@@ -38,12 +40,13 @@
                         </td>
                         <td>
                             <input name="email" value="">
-                            <span class="error"></span>
+                            <span class="error">{{email_error}}</span>
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <input type="submit">
+            <input type="submit" />
         </form>
-    </body>
-</html> 
+
+
+ {% endblock %}
