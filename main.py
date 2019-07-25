@@ -33,7 +33,7 @@ def is_valid_email(address):
         return True
 
 
-@app.route("/signup", methods = ['POST', 'GET'])
+@app.route("/signup", methods = ['POST'])
 def signup():
     
     username = request.form['username']
@@ -90,5 +90,5 @@ def welcome():
     username = request.args.get('username')
     return render_template('welcome_user.html', username=username)
 
-if  __name__ == "__main__":
-    app.run()
+
+app.run()
